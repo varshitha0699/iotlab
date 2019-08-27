@@ -4,18 +4,20 @@ void setup()
 {
   pinMode(led,OUTPUT);
   pinMode(push,INPUT);
+  Serial.begin(9600);
 }
 void loop()
 {
-  //int value=digitalRead(push);
+ 
   if(digitalRead(push))
   {
-    digitalWrite(led,LOW);
+    digitalWrite(led,HIGH);
     //delay(1000);
   }
   else
   {
-    digitalWrite(led,HIGH);
+    digitalWrite(led,LOW);
    // delay(1000);
   }
+  Serial.println(digitalRead(push));
 }
