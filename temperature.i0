@@ -1,0 +1,20 @@
+int analog=A4;
+//int buzzer=8;
+
+
+void setup() {
+ //pinMode(buzzer,OUTPUT);
+  pinMode(analog,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int value=analogRead(analog);
+  float mv=((float)value/1024)*5000;
+  float tempc=mv/10;
+  Serial.print("temp in c");
+  Serial.println(tempc);
+  delay(2000);
+  
+}
